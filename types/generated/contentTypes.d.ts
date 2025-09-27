@@ -455,6 +455,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     mode: Schema.Attribute.Enumeration<['HR', 'Technical']> &
       Schema.Attribute.DefaultTo<'Technical'>;
+    numberOfQuestions: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     queAns: Schema.Attribute.JSON;
     report: Schema.Attribute.JSON;
