@@ -1,20 +1,24 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
   register(/*{ strapi }*/) {},
 
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap(/*{ strapi }*/) {
+    // Catch and ignore Windows EPERM unlink errors from temp file cleanup
+    process.on("uncaughtException", (err) => {
+      if (err.code === "EPERM" && err.syscall === "unlink") {
+        console.warn("Ignored EPERM unlink error:", err.path);
+        return;
+      }
+      throw err; // rethrow other errors
+    });
+
+    process.on("unhandledRejection", (err) => {
+      if (err && err.code === "EPERM" && err.syscall === "unlink") {
+        console.warn("Ignored EPERM unlink error:", err.path);
+        return;
+      }
+      throw err;
+    });
+  },
 };
