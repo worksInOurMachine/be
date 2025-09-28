@@ -44,7 +44,7 @@
     "details": {
       "type": "text"
     },
-    "queAns": {
+    "conversation": {
       "type": "json"
     },
     "report": {
