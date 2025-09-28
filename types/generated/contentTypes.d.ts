@@ -458,7 +458,11 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'Technical'>;
     numberOfQuestions: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+<<<<<<< HEAD
     report: Schema.Attribute.JSON;
+=======
+    report: Schema.Attribute.RichText;
+>>>>>>> 5220e4a0c7726565474ec30da412343384603683
     resume: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

@@ -58,6 +58,9 @@
     },
     "numberOfQuestions": {
       "type": "integer"
+    },
+    "report": {
+      "type": "richtext"
     }
   }
 }
