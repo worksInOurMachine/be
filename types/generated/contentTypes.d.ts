@@ -441,6 +441,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    conversation: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -457,8 +458,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'Technical'>;
     numberOfQuestions: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    queAns: Schema.Attribute.JSON;
-    report: Schema.Attribute.JSON;
+    report: Schema.Attribute.RichText;
     resume: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
