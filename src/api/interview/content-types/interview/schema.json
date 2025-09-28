@@ -47,9 +47,6 @@
     "conversation": {
       "type": "json"
     },
-    "report": {
-      "type": "json"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
