@@ -441,6 +441,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    candidateName: Schema.Attribute.String;
     conversation: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
