@@ -459,10 +459,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
     numberOfQuestions: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     report: Schema.Attribute.RichText;
-    resume: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    resume: Schema.Attribute.String;
     skills: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
