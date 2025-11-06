@@ -46,14 +46,14 @@
     "numberOfQuestions": {
       "type": "integer"
     },
-    "report": {
-      "type": "richtext"
-    },
     "resume": {
       "type": "string"
     },
     "candidateName": {
       "type": "string"
+    },
+    "report": {
+      "type": "json"
     }
   }
 }

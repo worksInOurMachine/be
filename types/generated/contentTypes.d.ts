@@ -459,7 +459,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'Technical'>;
     numberOfQuestions: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    report: Schema.Attribute.RichText;
+    report: Schema.Attribute.JSON;
     resume: Schema.Attribute.String;
     skills: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
