@@ -1,17 +1,17 @@
 const path = require("path");
 
-module.exports = ({ env }) => ({
-  connection: {
-    client: "postgres",
+module.exports = ({ env }) => {
+  return {
     connection: {
-      host: env("PGHOST", "127.0.0.1"),
-      port: env.int("PGPORT", 5432),
-      database: env("PGDATABASE", "strapi"),
-      user: env("PGUSER", "strapi"),
-      password: env("PGPASSWORD", "password"),
-      ssl: {
-        rejectUnauthorized: false,
+      client: "postgres",
+      connection: {
+        host: env("PGHOST", "127.0.0.1"),
+        port: env.int("PGPORT", 24569),
+        database: env("PGDATABASE", "strapi"),
+        user: env("PGUSER", "strapi"),
+        password: env("PGPASSWORD", "password"),
+        // ssl: true,
       },
     },
-  },
-});
+  };
+};
